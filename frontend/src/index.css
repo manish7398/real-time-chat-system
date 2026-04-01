@@ -1,0 +1,182 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* APP BACKGROUND */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #fdf4ff);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 6px 0 20px rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar nav a:hover,
+.sidebar nav .active {
+  background: rgba(255,255,255,0.15);
+}
+
+.count {
+  background: red;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.sidebar-actions button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout {
+  background: #ef4444;
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-chip {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stat-card.gradient {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+}
+
+/* FEED */
+.feed {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.feed h2 {
+  margin-bottom: 16px;
+}
+
+.notif-card {
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation: slideIn 0.4s ease;
+}
+
+.notif-card span {
+  font-size: 12px;
+  color: gray;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: gray;
+  padding: 40px;
+}
+
+/* ANIMATION */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DARK MODE */
+.dark {
+  background: linear-gradient(135deg, #020617, #020617);
+}
+
+.dark .main,
+.dark .feed {
+  background: transparent;
+}
+
+.dark .stat-card,
+.dark .notif-card,
+.dark .user-chip {
+  background: #020617;
+  color: white;
+}
